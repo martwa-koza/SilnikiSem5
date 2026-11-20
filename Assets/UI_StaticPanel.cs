@@ -7,6 +7,9 @@ public class UI_StaticPanel : MonoBehaviour
     public PlayerHealth playerHealth;
     public TextMeshProUGUI healthText;
 
+    public PlayerCoin playerCoin;
+    public TextMeshProUGUI coinText;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
 
@@ -14,6 +17,7 @@ public class UI_StaticPanel : MonoBehaviour
     {
         playerHealth.OnAddHealth += PlayerHealth_OnAddHealth;
         playerHealth.OnHealthInnit += PlayerHealth_OnHealthInnit;  
+        playerCoin.OnAddCoin += PlayerCoin_OnAddCoin;
     }
 
     private void PlayerHealth_OnHealthInnit(int health)
@@ -25,6 +29,14 @@ public class UI_StaticPanel : MonoBehaviour
     {
         healthText.text = health.ToString();
     }
+
+    private void PlayerCoin_OnAddCoin(int coin)
+    {
+        coinText.text = coin.ToString();
+    }
+
+
+
 
     // Update is called once per frame
     void Update()

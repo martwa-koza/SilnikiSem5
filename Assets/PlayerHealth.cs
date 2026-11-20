@@ -7,10 +7,12 @@ public class PlayerHealth : MonoBehaviour
     private int health;
     public event Action Death;
     public event Action<int> OnAddHealth;
+    public event Action<int> OnHealthInnit;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         health = maxHealth;
+        OnHealthInnit?.Invoke(health);
     }
 
     // Update is called once per frame
