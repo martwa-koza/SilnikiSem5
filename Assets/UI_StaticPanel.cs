@@ -23,22 +23,32 @@ public class UI_StaticPanel : MonoBehaviour
 
     private void PlayerHealth_OnHealthInnit(int health)
     {
-        healthText.text = health.ToString();
+        ModifyHealthText(health);
     }
 
     private void PlayerHealth_OnAddHealth(int health)
     {
-        healthText.text = health.ToString();
+        ModifyHealthText(health);
+    }
+
+    private void ModifyHealthText(int obj)
+    {
+        coinText.text = "Health: " + obj.ToString();
     }
 
     private void PlayerCoin_OnAddCoin(int coin)
     {
-        coinText.text = coin.ToString();
+        ModifyCoinText(coin);
     }
 
     private void PlayerCoin_OnCoinInnit(int coin)
     {
-        coinText.text = coin.ToString();
+        ModifyCoinText(coin);
+    }
+
+    private void ModifyCoinText(int obj)
+    {
+        coinText.text = "Coins: " + obj.ToString();
     }
 
 
