@@ -16,7 +16,8 @@ public class UI_StaticPanel : MonoBehaviour
     private void Awake()
     {
         playerHealth.OnAddHealth += PlayerHealth_OnAddHealth;
-        playerHealth.OnHealthInnit += PlayerHealth_OnHealthInnit;  
+        playerHealth.OnHealthInnit += PlayerHealth_OnHealthInnit;
+        playerCoin.OnCoinInnit += PlayerCoin_OnCoinInnit;
         playerCoin.OnAddCoin += PlayerCoin_OnAddCoin;
     }
 
@@ -35,7 +36,10 @@ public class UI_StaticPanel : MonoBehaviour
         coinText.text = coin.ToString();
     }
 
-
+    private void PlayerCoin_OnCoinInnit(int coin)
+    {
+        coinText.text = coin.ToString();
+    }
 
 
     // Update is called once per frame
